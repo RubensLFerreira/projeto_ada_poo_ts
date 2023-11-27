@@ -29,6 +29,7 @@ export class MenuPrincipal {
                 case '3':
                     MenuCursos.iniciar()
                     return
+
                 case '4':
                     return
             }
