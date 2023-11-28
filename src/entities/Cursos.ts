@@ -16,6 +16,12 @@ export class Cursos implements CursosProps{ //Implementando a interface através
         Cursos.countCursos++
     }
 
+    public atualizarDados(nomeDoCurso: string, turno: string, disciplinas: Array<string>): void {
+        this._nomeDoCurso = nomeDoCurso
+        this._turno = turno
+        this._disciplinas = disciplinas
+    }
+
     get id(): number {
         return this._id
     }

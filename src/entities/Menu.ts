@@ -85,6 +85,7 @@ class MenuAlunos {
                     break;
                 case '4':
                     //atualizar alunos
+                    MenuAlunos.atualizaraluno(listaAlunos)
                     break;
                 case '5':
                     return MenuPrincipal.iniciar()
@@ -119,7 +120,7 @@ class MenuAlunos {
     }
 
     static removeAlunos(lista: ListaAlunosProps) {
-        console.log('========= Lista de Usuários =========')
+        console.log('========= Lista de Alunos =========')
 
         if(lista.alunos) {
             MenuAlunos.listaAlunos(lista)
@@ -129,8 +130,25 @@ class MenuAlunos {
 
         console.log('Lista vazia')
     }
-}
 
+    static atualizaraluno(lista: ListaAlunosProps): void {
+        MenuAlunos.listaAlunos(lista)
+        const id = Number(prompt('Digite o ID do aluno a ser atualizado: '));
+        const alunoEncontrado = lista.getAlunos(Number(id))
+        
+        if (alunoEncontrado) {
+          const nome = prompt('Digite o NOVO NOME do aluno: ');
+          const ano = Number(prompt('Digite o VALOR DA IDADE CORRETA: '));
+          const cursos = String(prompt('Digite o NOVO CURSO: '));
+          const disciplinas = Array<string>(prompt('Digite a NOVA DISCIPLINA: '));
+            
+          alunoEncontrado.atualizarDados(nome, ano, cursos, disciplinas);
+          console.log('\nAluno atualizada com sucesso!');
+        } else {
+          console.log('\nAluno não encontrada.');
+        }
+      }
+}
 
 //////////////////////////////////////////////////////////
 class MenuDisciplinas {
@@ -168,6 +186,7 @@ class MenuDisciplinas {
                     break;
                 case '4':
                     //atualizar disciplina
+                    MenuDisciplinas.atualizarDisciplina(listaDisciplinas)
                     break;
                 case '5':
                     return MenuPrincipal.iniciar()
@@ -182,10 +201,10 @@ class MenuDisciplinas {
     
         const nome = String(prompt('Nome: '))
         const cargaHoraria = String(prompt('Carga Horária: '))
-        const nota = Number(prompt('Nota: '))
+        const descricao = String(prompt('Descricao: '))
         
     
-        return new Disciplinas (nome, cargaHoraria, nota)
+        return new Disciplinas (nome, cargaHoraria, descricao)
     }
 
     static listaDisciplinas(lista: ListaDisciplinasProps) {
@@ -196,7 +215,7 @@ class MenuDisciplinas {
                 console.log(`ID: ${disciplinas.id}`)
                 console.log(`       > Nome: ${disciplinas.nome}`)
                 console.log(`       > Idade: ${disciplinas.cargaHoraria}`)
-                console.log(`       > Cursos: ${disciplinas.nota}`)
+                console.log(`       > Cursos: ${disciplinas.descricao}`)
             })
         }
     }
@@ -212,7 +231,26 @@ class MenuDisciplinas {
 
         console.log('Lista vazia')
     }
+
+    static atualizarDisciplina(lista: ListaDisciplinasProps): void {
+        MenuDisciplinas.listaDisciplinas(lista)
+        const id = Number(prompt('Digite o ID da disciplina a ser atualizada: '));
+        const disciplinaEncontrada = lista.getDisciplinas(Number(id))
+        
+        if (disciplinaEncontrada) {
+          const nome = prompt('Digite o NOVO NOME da disciplina: ');
+          const cargaHoraria = String(prompt('Digite a NOVA CARGA HORÁRIA da disciplina: '));
+          const descricao = String(prompt('Digite a NOVA DESCRIÇÃO da disciplina: '));
+    
+          disciplinaEncontrada.atualizarDados(nome, cargaHoraria, descricao);
+          console.log('\nDisciplina atualizada com sucesso!');
+        } else {
+          console.log('\nDisciplina não encontrada.');
+        }
+      }
 }
+
+
 
 
 //////////////////////////////////////////////////////////////
@@ -251,6 +289,7 @@ class MenuCursos {
                     break;
                 case '4':
                     //atualizar CURSO
+                    MenuCursos.atualizarCurso(listaCursos)
                     break;
                 case '5':
                     return MenuPrincipal.iniciar()
@@ -294,4 +333,21 @@ class MenuCursos {
 
         console.log('Lista vazia')
     }
+
+    static atualizarCurso(lista: ListaCursosProps): void {
+        MenuCursos.listaCursos(lista)
+        const id = Number(prompt('Digite o ID do Curso a ser atualizado: '));
+        const cursoEncontrado = lista.getCursos(Number(id))
+        
+        if (cursoEncontrado) {
+          const nomeDoCurso  = prompt('Digite o NOVO NOME do curso: ');
+          const turno = String(prompt('Digite o NOVO TURNO do curso: '));
+          const disciplinas = Array<string>(prompt('Digite a NOVA DISCIPLINA do curso: '));
+    
+          cursoEncontrado.atualizarDados(nomeDoCurso, turno, disciplinas);
+          console.log('\nCurso atualizado com sucesso!');
+        } else {
+          console.log('\nCurso não encontrada.');
+        }
+      }
 }

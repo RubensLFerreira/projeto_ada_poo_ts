@@ -18,6 +18,13 @@ export class Alunos implements AlunosProps{ //Implementando a interface através
         Alunos.countAlunos++
     }
 
+    public atualizarDados(nome: string, ano: number, cursos: string, disciplinas:Array<string>): void {
+        this._nome = nome;
+        this._ano = ano;
+        this._cursos = cursos;
+        this._disciplinas = disciplinas;
+    }
+
     get id(): number {
         return this._id
     }

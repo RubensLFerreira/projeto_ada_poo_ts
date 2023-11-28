@@ -35,4 +35,5 @@ export class ListaAlunos implements ListaAlunosProps {
         console.log('Lista Vazia')
         return
     }
+
 }

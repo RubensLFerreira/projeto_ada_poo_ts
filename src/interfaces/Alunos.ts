@@ -5,4 +5,5 @@ export interface AlunosProps {
     cursos: string
     disciplinas: Array<string> | undefined
     show: () => void
+    atualizarDados(nome: string, ano: number, cursos: string, disciplinas: Array<string>): void;
 }

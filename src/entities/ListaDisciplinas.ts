@@ -35,4 +35,15 @@ export class ListaDisciplinas implements ListaDisciplinasProps {
         console.log('Lista Vazia')
         return
     }
+
+    /*atualizarDisciplinas(id: number) {
+        if(this._disciplinas) {
+            this._disciplinas = this._disciplinas.filter(value => value.id !== id)
+            //Vai filtrar tudo que for diferente dele
+            return
+        }
+
+        console.log('Lista Vazia')
+        return
+    }*/
 }

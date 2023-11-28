@@ -6,14 +6,21 @@ export class Disciplinas implements DisciplinasProps{ //Implementando a interfac
     private _id: number
     private _nome: string
     private _cargaHoraria: string
-    private _nota: number
+    private _descricao: string
     
-    constructor(nome: string, cargaHoraria: string, nota: number) { //Definindo o construtor, o que vai chegar como parâmetro para o construtor, qual o formato desse parâmetros e os tipos dos seus atributos e atribuindo tudo aquilo que vai receber no momento da instância da classe(Lembrando que a função construtora é executada no momento que a classe é instanciada)
+    constructor(nome: string, cargaHoraria: string, descricao: string) { //Definindo o construtor, o que vai chegar como parâmetro para o construtor, qual o formato desse parâmetros e os tipos dos seus atributos e atribuindo tudo aquilo que vai receber no momento da instância da classe(Lembrando que a função construtora é executada no momento que a classe é instanciada)
         this._id = Disciplinas.countDisciplinas
         this._nome = nome
         this._cargaHoraria = cargaHoraria
-        this._nota = nota
+        this._descricao = descricao
         Disciplinas.countDisciplinas++
+    }
+
+
+    public atualizarDados(nome: string, cargaHoraria: string, descricao: string): void {
+        this._nome = nome;
+        this._cargaHoraria = cargaHoraria;
+        this._descricao = descricao;
     }
 
     get id(): number {
@@ -28,11 +35,13 @@ export class Disciplinas implements DisciplinasProps{ //Implementando a interfac
         return this._cargaHoraria
     }
 
-    get nota(): number {
-        return this._nota
+    get descricao(): string {
+        return this._descricao
     }
 
     show() {
         console.log()
     }
+
+
 }
