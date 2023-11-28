@@ -35,9 +35,25 @@ Visão Geral
 
 🔸Consultar Disciplina: Permite a consulta de informações detalhadas sobre uma disciplina, incluindo nome, carga horária, nota e curso associado.
 
-🔸Remover Disciplina: 
+🔸Remover Disciplina: Permite remover uma disciplina do sistema, excluindo todas as informações associadas a ela.
 
-🔸Atualizar Dsiciplina: 
+🔸Atualizar Dsiciplina: Oferece a opção de atualizar informações de uma disciplina, como nome, carga horária e nota.
+
+<h4>
+  3. Gerenciar Cursos
+</h4>
+🔸Cadastrar Curso: Permite o cadastro de um novo curso, incluindo nome e turno. Não é necessário associar disciplinas durante o cadastro.
+
+🔸Consultar Curso: Permite a consulta de informações detalhadas sobre um curso, incluindo nome, turno e lista de disciplinas associadas.
+
+🔸Remover Curso: Permite remover um curso do sistema, excluindo todas as informações associadas a ele, incluindo disciplinas e alunos.
+
+🔸Atualizar Curso: Oferece a opção de atualizar informações de um curso, como nome e turno.
+
+<h4>
+  4. Sair
+</h4>
+Encerra o programa.
 
   #### Contribuidores 🔻
 <table align="center">
