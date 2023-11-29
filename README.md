@@ -113,7 +113,7 @@ Este comando fará o download do código-fonte do sistema para um diretório loc
 <p>
   Após a conclusão da instalação das dependências, você pode iniciar o programa com o comando:
 
-  `npm start`
+  `npm run dev`
 
   Isso iniciará o sistema e apresentará o menu principal no terminal.
 </p>
