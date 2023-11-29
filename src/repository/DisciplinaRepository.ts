@@ -17,7 +17,7 @@ export default class DisciplinaRepository implements IListaDisciplina {
     console.log('\n--------------------------- Lista de Disciplina ---------------------------');
 
     this.disciplinas?.forEach((disciplina) => {
-      console.log(`| ID: ${disciplina._id} | Nome: ${disciplina._nome} | Nota: ${disciplina._nota} | Carga Horária: ${disciplina._cargaHoraria} |`);
+      console.log(`| ID: ${disciplina._id} | Nome: ${disciplina._nome} | Descrição: ${disciplina._descricao} | Carga Horária: ${disciplina._cargaHoraria} |`);
     });
 
     console.log('--------------------------------------------------------------------------\n');
@@ -32,7 +32,7 @@ export default class DisciplinaRepository implements IListaDisciplina {
     }
 
     console.log(`\n---------------- Disciplina id: ${id} ----------------`);
-    console.log(`| Nome: ${disciplina._nome} | Nota: ${disciplina._nota} | Carga Horária: ${disciplina._cargaHoraria} |`);
+    console.log(`| Nome: ${disciplina._nome} | Nota: ${disciplina._descricao} | Carga Horária: ${disciplina._cargaHoraria} |`);
     console.log(`-----------------------------------------------------------------`);
     return disciplina;
   }

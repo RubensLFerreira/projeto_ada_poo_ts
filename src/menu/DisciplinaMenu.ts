@@ -55,12 +55,12 @@ export default class DisciplinaMenu {
     console.log('\n--------------------------- Cadastrar Disciplina ---------------------------\n');
 
     const nome = prompt('Digite o NOME da disciplina: ');
-    const nota = Number(prompt('Digite a NOTA FINAL da disciplina: '));
+    const descricao = prompt('Digite a DESCRIÇÂO da disciplina: ');
     const cargaHoraria = Number(prompt('Digite a CARGA HORÁRIA da disciplina: '));
 
     console.log('\nDisciplina cadastrada com sucesso!');
 
-    return new Disciplina(nome, cargaHoraria, nota);
+    return new Disciplina(nome, descricao, cargaHoraria);
 
   }
 
@@ -80,10 +80,10 @@ export default class DisciplinaMenu {
 
     if (disciplinaEncontrada) {
       const nome = prompt('Digite o NOVO NOME da disciplina: ');
-      const nota = Number(prompt('Digite a NOVA NOTA FINAL da disciplina: '));
+      const descricao = prompt('Digite a NOVA DESCRIÇÂO FINAL da disciplina: ');
       const cargaHoraria = Number(prompt('Digite a NOVA CARGA HORÁRIA da disciplina: '));
 
-      disciplinaEncontrada.atualizarDados(nome, nota, cargaHoraria);
+      disciplinaEncontrada.atualizarDados(nome, descricao, cargaHoraria);
       console.log('\nDisciplina atualizada com sucesso!');
     } else {
       console.log('\nDisciplina não encontrada.');
