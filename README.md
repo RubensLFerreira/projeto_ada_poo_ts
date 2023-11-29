@@ -1,6 +1,6 @@
 # ada_poo_ts_biblioteca
 
-Projeto final do módulo 2 da ADA - `Sistema de Gerenciamento Escolar`
+Projeto final do módulo 2 da ADA - `Sistema de Gerenciamento Bibliotecário`
 
 <div align="center"> 
 <h2>
@@ -8,7 +8,7 @@ Visão Geral
 </h2>
 </div>
 <div align="justify">
-<p> Este projeto é um sistema de gerenciamento escolar desenvolvido em TypeScript, projetado para fornecer funcionalidades básicas de cadastro, consulta, remoção e atualização de alunos, disciplinas e cursos. O sistema utiliza uma abordagem orientada a objetos para modelar as entidades principais e suas relações. </p>
+<p> Este projeto é um sistema de gerenciamento de uma bilioteca desenvolvido em TypeScript, projetado para fornecer funcionalidades básicas de cadastro, consulta, remoção e atualização de alunos, disciplinas e cursos. O sistema utiliza uma abordagem orientada a objetos para modelar as entidades principais e suas relações. </p>
 
 <div align="center"> 
 <h2>
