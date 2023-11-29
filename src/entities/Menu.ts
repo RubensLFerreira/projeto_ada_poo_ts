@@ -96,19 +96,19 @@ class MenuAlunos {
     }
     static registro() {
         console.log('========= Cadastrar Aluno =========')
-    
+
         const nome = String(prompt('Nome: '))
         const ano = Number(prompt('Idade: '))
         const cursos = String(prompt('Curso: '))
         const disciplinas = Array<string>(prompt('Disciplina: '))
-    
-        return new Alunos (nome, ano, cursos, disciplinas)
+
+        return new Alunos(nome, ano, cursos, disciplinas)
     }
 
     static listaAlunos(lista: ListaAlunosProps) {
         console.log('========= Lista de Alunos =========')
 
-        if(lista.alunos) {
+        if (lista.alunos) {
             lista.alunos.forEach((alunos) => {
                 console.log(`ID: ${alunos.id}`)
                 console.log(`       > Nome: ${alunos.nome}`)
@@ -122,7 +122,7 @@ class MenuAlunos {
     static removeAlunos(lista: ListaAlunosProps) {
         console.log('========= Lista de Alunos =========')
 
-        if(lista.alunos) {
+        if (lista.alunos) {
             MenuAlunos.listaAlunos(lista)
             const id = prompt('Informe o id a ser removido: ')
             return lista.removeAlunos(Number(id))
@@ -135,19 +135,19 @@ class MenuAlunos {
         MenuAlunos.listaAlunos(lista)
         const id = Number(prompt('Digite o ID do aluno a ser atualizado: '));
         const alunoEncontrado = lista.getAlunos(Number(id))
-        
+
         if (alunoEncontrado) {
-          const nome = prompt('Digite o NOVO NOME do aluno: ');
-          const ano = Number(prompt('Digite o VALOR DA IDADE CORRETA: '));
-          const cursos = String(prompt('Digite o NOVO CURSO: '));
-          const disciplinas = Array<string>(prompt('Digite a NOVA DISCIPLINA: '));
-            
-          alunoEncontrado.atualizarDados(nome, ano, cursos, disciplinas);
-          console.log('\nAluno atualizada com sucesso!');
+            const nome = prompt('Digite o NOVO NOME do aluno: ');
+            const ano = Number(prompt('Digite o VALOR DA IDADE CORRETA: '));
+            const cursos = String(prompt('Digite o NOVO CURSO: '));
+            const disciplinas = Array<string>(prompt('Digite a NOVA DISCIPLINA: '));
+
+            alunoEncontrado.atualizarDados(nome, ano, cursos, disciplinas);
+            console.log('\nAluno atualizada com sucesso!');
         } else {
-          console.log('\nAluno não encontrada.');
+            console.log('\nAluno não encontrada.');
         }
-      }
+    }
 }
 
 //////////////////////////////////////////////////////////
@@ -198,37 +198,36 @@ class MenuDisciplinas {
 
     static registro() {
         console.log('========= Cadastrar Disciplina =========')
-    
+
         const nome = String(prompt('Nome: '))
         const cargaHoraria = String(prompt('Carga Horária: '))
         const descricao = String(prompt('Descricao: '))
-        
-    
-        return new Disciplinas (nome, cargaHoraria, descricao)
+
+
+        return new Disciplinas(nome, cargaHoraria, descricao)
     }
 
     static listaDisciplinas(lista: ListaDisciplinasProps) {
-        console.log('========= Lista de Alunos =========')
+        console.log('========= Lista de Disciplinas =========')
 
-        if(lista.disciplinas) {
+        if (lista.disciplinas) {
             lista.disciplinas.forEach((disciplinas) => {
                 console.log(`ID: ${disciplinas.id}`)
                 console.log(`       > Nome: ${disciplinas.nome}`)
-                console.log(`       > Idade: ${disciplinas.cargaHoraria}`)
-                console.log(`       > Cursos: ${disciplinas.descricao}`)
+                console.log(`       > Carga Horária: ${disciplinas.cargaHoraria}`)
+                console.log(`       > Descricao: ${disciplinas.descricao}`)
             })
         }
     }
 
     static removeDisciplinas(lista: ListaDisciplinasProps) {
-        console.log('========= Lista de Disciplinas =========')
 
-        if(lista.disciplinas) {
+        if (lista.disciplinas) {
             MenuDisciplinas.listaDisciplinas(lista)
             const id = prompt('Informe o id a ser removido: ')
             return lista.removeDisciplinas(Number(id))
         }
-
+        console.log('========= Lista de Disciplinas =========')
         console.log('Lista vazia')
     }
 
@@ -236,18 +235,18 @@ class MenuDisciplinas {
         MenuDisciplinas.listaDisciplinas(lista)
         const id = Number(prompt('Digite o ID da disciplina a ser atualizada: '));
         const disciplinaEncontrada = lista.getDisciplinas(Number(id))
-        
+
         if (disciplinaEncontrada) {
-          const nome = prompt('Digite o NOVO NOME da disciplina: ');
-          const cargaHoraria = String(prompt('Digite a NOVA CARGA HORÁRIA da disciplina: '));
-          const descricao = String(prompt('Digite a NOVA DESCRIÇÃO da disciplina: '));
-    
-          disciplinaEncontrada.atualizarDados(nome, cargaHoraria, descricao);
-          console.log('\nDisciplina atualizada com sucesso!');
+            const nome = prompt('Digite o NOVO NOME da disciplina: ');
+            const cargaHoraria = String(prompt('Digite a NOVA CARGA HORÁRIA da disciplina: '));
+            const descricao = String(prompt('Digite a NOVA DESCRIÇÃO da disciplina: '));
+
+            disciplinaEncontrada.atualizarDados(nome, cargaHoraria, descricao);
+            console.log('\nDisciplina atualizada com sucesso!');
         } else {
-          console.log('\nDisciplina não encontrada.');
+            console.log('\nDisciplina não encontrada.');
         }
-      }
+    }
 }
 
 
@@ -299,20 +298,20 @@ class MenuCursos {
         }
     }
     static registro() {
-        console.log('========== Cadastrar Disciplina =========')
-    
+        console.log('========== Cadastrar Curso ==========')
+
         const nomeDoCurso = String(prompt('Nome: '))
-        const turno = String(prompt('Carga Horária: '))
-        const disciplinas = Array<string>(prompt('Nota: '))
-        
-    
-        return new Cursos (nomeDoCurso, turno, disciplinas)
+        const turno = String(prompt('Turno: '))
+        const disciplinas = Array<string>(prompt('Disciplinas: '))
+
+
+        return new Cursos(nomeDoCurso, turno, disciplinas)
     }
 
     static listaCursos(lista: ListaCursosProps) {
         console.log('========= Lista de Cursos =========')
 
-        if(lista.cursos) {
+        if (lista.cursos) {
             lista.cursos.forEach((cursos) => {
                 console.log(`ID: ${cursos.id}`)
                 console.log(`       > Nome: ${cursos.nomeDoCurso}`)
@@ -323,14 +322,14 @@ class MenuCursos {
     }
 
     static removeCursos(lista: ListaCursosProps) {
-        console.log('========= Lista de Cursos =========')
 
-        if(lista.cursos) {
+        if (lista.cursos) {
             MenuCursos.listaCursos(lista)
             const id = prompt('Informe o id a ser removido: ')
             return lista.removeCursos(Number(id))
         }
 
+        console.log('========= Lista de Cursos =========')
         console.log('Lista vazia')
     }
 
@@ -338,16 +337,16 @@ class MenuCursos {
         MenuCursos.listaCursos(lista)
         const id = Number(prompt('Digite o ID do Curso a ser atualizado: '));
         const cursoEncontrado = lista.getCursos(Number(id))
-        
+
         if (cursoEncontrado) {
-          const nomeDoCurso  = prompt('Digite o NOVO NOME do curso: ');
-          const turno = String(prompt('Digite o NOVO TURNO do curso: '));
-          const disciplinas = Array<string>(prompt('Digite a NOVA DISCIPLINA do curso: '));
-    
-          cursoEncontrado.atualizarDados(nomeDoCurso, turno, disciplinas);
-          console.log('\nCurso atualizado com sucesso!');
+            const nomeDoCurso = prompt('Digite o NOVO NOME do curso: ');
+            const turno = String(prompt('Digite o NOVO TURNO do curso: '));
+            const disciplinas = Array<string>(prompt('Digite a NOVA DISCIPLINA do curso: '));
+
+            cursoEncontrado.atualizarDados(nomeDoCurso, turno, disciplinas);
+            console.log('\nCurso atualizado com sucesso!');
         } else {
-          console.log('\nCurso não encontrada.');
+            console.log('\nCurso não encontrada.');
         }
-      }
+    }
 }
