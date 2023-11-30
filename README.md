@@ -12,6 +12,15 @@ Visão Geral
 
 <div align="center"> 
 <h2>
+Exemplo de usabilidade
+</h2>
+    <figure class="gif">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjNweHY1c2QyZWtqNnhxbzI3ZzloeWJjcmI2bTF3Y21pano2MnZhZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5dMdZn3sC2rgey8bkL/giphy.gif">
+      </figure>
+</div>
+
+<div align="center"> 
+<h2>
 Regra de negócio
 </h2>
 </div>
