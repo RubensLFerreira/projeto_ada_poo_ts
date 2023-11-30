@@ -1,6 +1,6 @@
 # ada_poo_ts_biblioteca
 
-#### Projeto final do módulo 2 da ADA - Sistema de Gerenciamento Bibliotecário
+#### Projeto final - Módulo 2 da ADA | Sistema de Gerenciamento Escolar
 
 <div align="center"> 
 <h2>
@@ -8,7 +8,7 @@ Visão Geral
 </h2>
 </div>
 <div align="justify">
-<p> Este projeto é um sistema de gerenciamento de uma bilioteca desenvolvido com TypeScript, projetado para fornecer funcionalidades básicas de cadastro, consulta, remoção e atualização de alunos, disciplinas e cursos. O sistema utiliza uma abordagem orientada a objetos para modelar as entidades principais e suas relações. </p>
+<p> Este projeto consiste em um sistema de Gestão de Escolar criado com TypeScript. Ele foi elaborado para oferecer funcionalidades fundamentais, como cadastro, consulta, remoção e atualização de alunos, disciplinas e cursos. O sistema adota uma abordagem orientada a objetos para modelar as entidades principais e suas interações. </p>
 
 <div align="center"> 
 <h2>
@@ -82,7 +82,7 @@ Regra de negócio
 | :----------  | :------------------------------------------ |
 |Cadastrar Aluno | Permite cadastrar um novo aluno, incluindo informações como nome, idade e seleção de um curso existente.| 
 |Consultar Aluno | Possibilita a consulta de informações detalhadas sobre um aluno, incluindo seu nome, idade, curso associado e lista de disciplinas. |
-|Consultar Aluno por ID | Após informar um ID válido, ossibilita a consulta de informações detalhadas sobre um aluno. |
+|Consultar Aluno por ID | Após informar um ID válido, possibilita a consulta de informações detalhadas sobre um aluno. |
 |Remover Aluno| Permite remover um aluno do sistema, excluindo todas as informações associadas a ele. |
 |Atualizar Aluno| Oferece a opção de atualizar informações de um aluno, como nome, idade e curso associado.|
 
@@ -94,7 +94,7 @@ Regra de negócio
 | :----------  | :------------------------------------------ |
 |Cadastrar Disciplina| Permite o cadastro de uma nova disciplina, incluindo nome, carga horária e nota. A disciplina é associada a um curso existente.|
 |Consultar Disciplina| Permite a consulta de informações detalhadas sobre uma disciplina, incluindo nome, carga horária, nota e curso associado.|
-|Consultar Disciplina por ID | Após informar um ID válido, ossibilita a consulta de informações detalhadas sobre uma disciplina. |
+|Consultar Disciplina por ID | Após informar um ID válido, possibilita a consulta de informações detalhadas sobre uma disciplina. |
 |Remover Disciplina| Permite remover uma disciplina do sistema, excluindo todas as informações associadas a ela.|
 |Atualizar Dsiciplina| Oferece a opção de atualizar informações de uma disciplina, como nome, carga horária e nota.|
 
@@ -106,7 +106,7 @@ Regra de negócio
 | :----------  | :------------------------------------------ |
 |Cadastrar Curso| Permite o cadastro de um novo curso, incluindo nome e turno. Não é necessário associar disciplinas durante o cadastro.|
 |Consultar Curso| Permite a consulta de informações detalhadas sobre um curso, incluindo nome, turno e lista de disciplinas associadas.|
-|Consultar Curso por ID | Após informar um ID válido, ossibilita a consulta de informações detalhadas sobre um curso. |
+|Consultar Curso por ID | Após informar um ID válido, possibilita a consulta de informações detalhadas sobre um curso. |
 |Remover Curso| Permite remover um curso do sistema, excluindo todas as informações associadas a ele, incluindo disciplinas e alunos.|
 |Atualizar Curso| Oferece a opção de atualizar informações de um curso, como nome e turno.|
 
@@ -123,13 +123,14 @@ Encerra o programa.
 <div align="left">
   <p>
 O projeto é organizado em classes que representam as principais entidades do sistema:
-    
-Aluno: Representa um aluno com nome, idade e associação a um curso.
 
-Disciplina: Representa uma disciplina com nome, carga horária, nota e associação a um curso.
+| Classe          | Descrição                       |
+| :----------  | :------------------------------------------ |
+| `Aluno` | Representa um aluno com nome, idade e associação a um curso. |
+| `Disciplina` | Representa uma disciplina com nome, carga horária, nota e associação a um curso. |
+| `Curso` | Representa um curso com nome, turno e uma lista de disciplinas associadas. |
 
-Curso: Representa um curso com nome, turno e uma lista de disciplinas associadas.
-  </p>
+</p>
 </div>
 
 <div align="center">
