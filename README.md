@@ -153,7 +153,9 @@ O projeto é organizado em classes que representam as principais entidades do si
 <p>
   Abra o terminal e execute o seguinte comando para clonar o repositório para sua máquina local:
   
+  ```bash
   git clone https://github.com/RubensLFerreira/projeto_ada_poo_ts.git
+  ```
 
 Este comando fará o download do código-fonte do sistema para um diretório local.
 </p>
@@ -161,7 +163,9 @@ Este comando fará o download do código-fonte do sistema para um diretório loc
 <p>
   Acesse o diretório recém-clonado usando o comando:
   
+  ```bash
   cd projeto_ada_poo_ts
+  ```
 
   Certifique-se de estar dentro do diretório do projeto antes de prosseguir.
 </p>
@@ -169,8 +173,10 @@ Este comando fará o download do código-fonte do sistema para um diretório loc
 🔻Instale as Dependências do Projeto 
 <p>
   Para garantir que todas as bibliotecas necessárias sejam instaladas, execute o seguinte comando:
-
+  
+  ```bash
   npm install
+  ```
   
   Isso instalará as dependências listadas no arquivo package.json do projeto. Aguarde até que o processo de instalação seja concluído.
 </p>
@@ -182,7 +188,9 @@ Este comando fará o download do código-fonte do sistema para um diretório loc
 <p>
   Após a conclusão da instalação das dependências, você pode iniciar o programa com o comando:
 
+  ```bash
   npm run dev
+  ```
 
   Isso iniciará o sistema e apresentará o menu principal no terminal.
 </p>
