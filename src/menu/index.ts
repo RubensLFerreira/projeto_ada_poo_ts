@@ -1,5 +1,6 @@
 import * as PromptSync from 'prompt-sync';
 
+import CursoMenu from './CursoMenu';
 import DisciplinaMenu from './DisciplinaMenu';
 
 const prompt = PromptSync();
@@ -28,7 +29,7 @@ export default class Menu {
           console.log('Ainda em construção!');
           break;
         case '2':
-          console.log('Ainda em construção!');
+          CursoMenu.init();
           break;
         case '3':
           DisciplinaMenu.init();
