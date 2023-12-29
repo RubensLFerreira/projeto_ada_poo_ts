@@ -1,1 +1,7 @@
-console.log('Hello world!');
+import Menu from './menu';
+
+const main = () => {
+  Menu.init();
+};
+
+main();
