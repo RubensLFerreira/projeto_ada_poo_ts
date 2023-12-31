@@ -123,7 +123,6 @@ export default class CursoMenu {
       return id;
     } catch (error) {
       console.log('\nErro ao buscar por Cursos: ', error);
-
     }
   }
 

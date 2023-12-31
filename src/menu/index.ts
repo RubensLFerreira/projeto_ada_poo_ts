@@ -1,5 +1,6 @@
 import * as PromptSync from 'prompt-sync';
 
+import AlunoMenu from './AlunoMenu';
 import CursoMenu from './CursoMenu';
 import DisciplinaMenu from './DisciplinaMenu';
 
@@ -26,7 +27,7 @@ export default class Menu {
 
       switch (option) {
         case '1':
-          console.log('Ainda em construção!');
+          AlunoMenu.init();
           break;
         case '2':
           CursoMenu.init();
