@@ -1,10 +1,11 @@
-import PromptSync from 'prompt-sync';
+import * as PromptSync from 'prompt-sync';
 
-import DisciplinaMenu from './DisciplinaMenu';
-import CursoMenu from './CursoMenu';
 import AlunoMenu from './AlunoMenu';
+import CursoMenu from './CursoMenu';
+import DisciplinaMenu from './DisciplinaMenu';
 
 const prompt = PromptSync();
+
 export default class Menu {
 
   static options() {
@@ -19,9 +20,9 @@ export default class Menu {
   }
 
   static init() {
+    const value = true;
 
-    while (true) {
-
+    while (value) {
       const option = Menu.options();
 
       switch (option) {

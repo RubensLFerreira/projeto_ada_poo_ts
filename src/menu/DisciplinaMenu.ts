@@ -1,4 +1,4 @@
-import PromptSync from 'prompt-sync';
+import * as PromptSync from 'prompt-sync';
 
 import Disciplina from '../entities/Disciplina';
 import DisciplinaRepository from '../repository/DisciplinaRepository';
@@ -21,29 +21,33 @@ export default class DisciplinaMenu {
 
     return prompt('Selecione uma opção: ');
   }
-
   static init() {
-    while (true) {
+    const value = true;
+
+    while (value) { 
       const option = DisciplinaMenu.options();
+      let id;
+      let disciplina;
 
       switch (option) {
         case '1':
-          const disciplina = DisciplinaMenu.cadastrarDisciplina();
+          disciplina = DisciplinaMenu.cadastrarDisciplina();
           DisciplinaMenu.disciplinaRepository.cadastrar(disciplina);
           break;
         case '2':
           DisciplinaMenu.disciplinaRepository.listar();
           break;
         case '3':
-          const consultarId = DisciplinaMenu.consultarPorId();
-          DisciplinaMenu.disciplinaRepository.consultar(consultarId);
+          id = DisciplinaMenu.consultarDisciplina();
+          DisciplinaMenu.disciplinaRepository.consultar(id);
+          DisciplinaMenu.disciplinaRepository.consultarNome(id);
           break;
         case '4':
           DisciplinaMenu.atualizarDisciplina();
           break;
         case '5':
-          const removerId = DisciplinaMenu.removerDisciplina();
-          DisciplinaMenu.disciplinaRepository.remover(removerId);
+          id = DisciplinaMenu.removerDisciplina();
+          DisciplinaMenu.disciplinaRepository.remover(id);
           break;
         case '6':
           return;
@@ -55,42 +59,81 @@ export default class DisciplinaMenu {
     console.log('\n--------------------------- Cadastrar Disciplina ---------------------------\n');
 
     const nome = prompt('Digite o NOME da disciplina: ');
-    const nota = Number(prompt('Digite a NOTA FINAL da disciplina: '));
+    const descricao = prompt('Digite a DESCRIÇÂO da disciplina: ');
     const cargaHoraria = Number(prompt('Digite a CARGA HORÁRIA da disciplina: '));
 
-    console.log('\nDisciplina cadastrada com sucesso!');
+    if (!nome || !descricao || isNaN(cargaHoraria)) {
+      console.log('\nEntrada inválida! Certifique-se de inserir um nome, descrição e carga horária válidos.');
+      DisciplinaMenu.init();
+    }
 
-    return new Disciplina(nome, cargaHoraria, nota);
-
+    try {
+      console.log('\nDisciplina cadastrada com sucesso!');
+      return new Disciplina(nome, descricao, cargaHoraria);
+    } catch (error) {
+      throw Error('Erro ao cadastrar disciplina: ' + error);
+    }
   }
 
-  static listarDisciplinas(disciplinaRepository: IListaDisciplina): void {
-    disciplinaRepository.listar();
+  static listarDisciplinas(DisciplinaRepository: IListaDisciplina): void | undefined {
+    DisciplinaRepository.listar();
   }
 
-  static consultarPorId(): number {
-    return Number(prompt('Digite o ID da disciplina para consultar: '));
+  static consultarDisciplina() {
+    console.log('\n--------------------------- Consultar Disciplina ---------------------------\n');
+
+    const id = Number(prompt('Digite o ID da disciplina: '));
+
+    if (isNaN(id)) {
+      console.log('\nID inválido!');
+      DisciplinaMenu.init();
+    }
+
+    return id;
   }
 
   static atualizarDisciplina(): void {
     const id = Number(prompt('Digite o ID da disciplina a ser atualizada: '));
+
+    if (isNaN(id)) {
+      console.log('\nID inválido!');
+      return;
+    }
+
     const disciplinaEncontrada = DisciplinaMenu.disciplinaRepository.disciplinas?.find(
       (disciplina) => disciplina._id === id
     );
 
-    if (disciplinaEncontrada) {
-      const nome = prompt('Digite o NOVO NOME da disciplina: ');
-      const nota = Number(prompt('Digite a NOVA NOTA FINAL da disciplina: '));
-      const cargaHoraria = Number(prompt('Digite a NOVA CARGA HORÁRIA da disciplina: '));
+    if (disciplinaEncontrada === undefined) {
+      console.log('\nDisciplina não encontrada!');
+      return;
+    }
 
-      disciplinaEncontrada.atualizarDados(nome, nota, cargaHoraria);
+    const nome = prompt('Digite o NOVO NOME da disciplina: ');
+    const descricao = prompt('Digite a NOVA DESCRIÇÂO FINAL da disciplina: ');
+    const cargaHoraria = Number(prompt('Digite a NOVA CARGA HORÁRIA da disciplina: '));
+
+    if (!nome || !descricao || isNaN(cargaHoraria)) {
+      console.log('\nEntrada inválida! Certifique-se de inserir um nome, descrição e carga horária válidos.');
+      return;
+    }
+
+    try {
+      disciplinaEncontrada.atualizarDados(nome, descricao, cargaHoraria);
       console.log('\nDisciplina atualizada com sucesso!');
-    } else {
-      console.log('\nDisciplina não encontrada.');
+    } catch (error) {
+      console.error(error);
     }
   }
 
   static removerDisciplina(): number {
-    return Number(prompt('Digite o ID da disciplina para remover: '));
+    const id = parseInt(prompt('Digite o ID da disciplina: '));
+
+    if (isNaN(id)) {
+      console.log('\nID inválido!');
+      DisciplinaMenu.init();
+    }
+
+    return id;
   }
 }

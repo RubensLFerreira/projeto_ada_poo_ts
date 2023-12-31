@@ -1,4 +1,4 @@
-import Util from "../utils";
+import Util from '../utils';
 
 export default class Curso {
   _id: number;

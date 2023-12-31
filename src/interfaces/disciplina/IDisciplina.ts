@@ -1,7 +1,7 @@
 export interface IDisciplina {
   _id: number;
   _nome: string;
-  _nota: number
+  _descricao: string;
   _cargaHoraria: number;
-  atualizarDados(nome: string, cargaHoraria: number, nota: number): void;
+  atualizarDados(nome: string, descricao: string, cargaHoraria: number): void;
 }

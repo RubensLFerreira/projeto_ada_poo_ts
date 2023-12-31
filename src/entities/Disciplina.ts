@@ -1,21 +1,21 @@
-import Util from '../utils/index';
+import Util from '../utils';
 
 export default class Disciplina {
   _id: number;
   _nome: string;
-  _nota: number
+  _descricao: string;
   _cargaHoraria: number;
 
-  constructor(nome: string, cargaHoraria: number, nota: number) {
+  constructor(nome: string, descricao: string, cargaHoraria: number) {
     this._id = Util.id();
     this._nome = nome;
-    this._nota = nota;
+    this._descricao = descricao;
     this._cargaHoraria = cargaHoraria;
   }
 
-  public atualizarDados(nome: string, cargaHoraria: number, nota: number): void {
+  atualizarDados(nome: string, descricao: string, cargaHoraria: number) {
     this._nome = nome;
-    this._nota = nota;
+    this._descricao = descricao;
     this._cargaHoraria = cargaHoraria;
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "projeto_ada_poo_ts",
   "version": "1.0.0",
-  "description": "Projeto final do módulo 2 da ADA",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node src/index.ts"
@@ -18,11 +18,17 @@
   },
   "homepage": "https://github.com/RubensLFerreira/projeto_ada_poo_ts#readme",
   "devDependencies": {
-    "typescript": "^5.3.2"
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "@types/prompt-sync": "^4.2.3",
     "prompt-sync": "^4.2.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.2"
   }
 }
