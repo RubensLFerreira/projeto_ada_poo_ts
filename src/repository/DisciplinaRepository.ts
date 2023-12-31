@@ -14,6 +14,7 @@ export default class DisciplinaRepository implements IListaDisciplina {
       return disciplina;
     } catch (error) {
       console.error(error);
+      return;
     }
   }
 
@@ -42,6 +43,18 @@ export default class DisciplinaRepository implements IListaDisciplina {
     console.log(`\n---------------- Disciplina id: ${id} ----------------`);
     console.log(`| Nome: ${disciplina._nome} | Nota: ${disciplina._descricao} | Carga Horária: ${disciplina._cargaHoraria} |`);
     console.log('-----------------------------------------------------------------');
+    return disciplina;
+  }
+
+  consultarNome(id: number): IDisciplina | undefined {
+    const disciplina = this.disciplinas?.find(disciplina => disciplina._id === id);
+
+    if (!disciplina) {
+      console.log('\nDisciplina não encontrada!');
+      return;
+    }
+
+    console.log(`Disciplina: ${disciplina._nome} | Descrição: ${disciplina._descricao}`);
     return disciplina;
   }
 

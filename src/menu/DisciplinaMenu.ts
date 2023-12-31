@@ -40,6 +40,7 @@ export default class DisciplinaMenu {
         case '3':
           id = DisciplinaMenu.consultarDisciplina();
           DisciplinaMenu.disciplinaRepository.consultar(id);
+          DisciplinaMenu.disciplinaRepository.consultarNome(id);
           break;
         case '4':
           DisciplinaMenu.atualizarDisciplina();

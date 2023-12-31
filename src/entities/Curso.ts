@@ -10,4 +10,9 @@ export default class Curso {
     this._nome = nome;
     this._disciplinas = disciplinas;
   }
+
+  atualizarDados(nome: string, disciplinas: Array<number>): void {
+    this._nome = nome;
+    this._disciplinas = disciplinas;
+  }
 }
