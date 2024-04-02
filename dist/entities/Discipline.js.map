@@ -1,0 +1,1 @@
+{"version":3,"file":"Discipline.js","sourceRoot":"","sources":["../../src/entities/Discipline.ts"],"names":[],"mappings":";;AAEA,MAAqB,UAAU;IAM7B,YAAY,EAAU,EAAE,IAAY,EAAE,WAAmB,EAAE,QAAgB;QACzE,IAAI,CAAC,GAAG,GAAG,EAAE;YACb,IAAI,CAAC,KAAK,GAAG,IAAI;YACjB,IAAI,CAAC,YAAY,GAAG,WAAW,CAAC;QAChC,IAAI,CAAC,SAAS,GAAG,QAAQ,CAAC;IAC5B,CAAC;CACF;AAZD,6BAYC"}

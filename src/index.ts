@@ -1,7 +1,3 @@
-import Menu from './menu';
+import Menu from './menus/index';
 
-const main = () => {
-  Menu.init();
-};
-
-main();
+Menu.init(); 
