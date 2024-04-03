@@ -10,7 +10,7 @@ const prompt = PromptSync();
 const disciplineRepository: DisciplineRepository = new DisciplineRepository();
 
 export default class DisciplineController {
-  static registerDiscipline(): void {
+  registerDiscipline(): IDiscipline | undefined {
     console.log('\n--------------------------- Register Discipline ---------------------------\n');
 
     const _id = Generator.generateId();
@@ -35,8 +35,10 @@ export default class DisciplineController {
 
       console.log('\nDiscipline successfully created!');
       console.log(response);
+      return response;
     } catch (error: any) {
       console.log('Error when registering a new discipline: ', error.message);
+      return error.message;
     }
   }
 

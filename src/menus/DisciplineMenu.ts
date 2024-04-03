@@ -20,13 +20,14 @@ export default class DisciplineMenu {
 
   static init(): void {
     const value = true;
+    const disciplineController = new DisciplineController();
 
     while (value) {
       const option = DisciplineMenu.options();
 
       switch (option) {
         case '1':
-          DisciplineController.registerDiscipline();
+          disciplineController.registerDiscipline();
           break;
         case '2':
           DisciplineController.getAllDisciplines();

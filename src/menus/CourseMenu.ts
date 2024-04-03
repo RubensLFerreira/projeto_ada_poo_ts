@@ -4,6 +4,7 @@ import Menu from './index';
 import CourseController from '../controllers/CourseController';
 
 const prompt = PromptSync();
+const courseController = new CourseController();
 
 export default class CourseMenu {
   static options(): string {
@@ -27,7 +28,7 @@ export default class CourseMenu {
 
       switch (option) {
         case '1':
-          CourseController.registerCourse();
+          courseController.registerCourse();
           break; 
         case '2':
           CourseController.getAllCourses();

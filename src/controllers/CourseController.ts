@@ -4,14 +4,15 @@ import CourseRepository from '../repositories/CourseRepository';
 import DisciplineController from './DisciplineController';
 import Validator from '../utils/errors/validator';
 import Generator from '../utils/Generator';
-import { ICourse } from '@src/interfaces/course/ICourse';
+import { ICourse } from '../interfaces/course/ICourse';
+import { ICourseController } from '../interfaces/course/ICourseController';
 
 const value = true;
 const prompt = PromptSync();
 const courseRepository = new CourseRepository();
 
-export default class CourseController {
-  static registerCourse(): void {
+export default class CourseController implements ICourseController {
+  registerCourse(): ICourse | undefined {
     console.log('\n--------------------------- Course Discipline ---------------------------\n');
 
     const _id = Generator.generateId();
@@ -62,8 +63,10 @@ export default class CourseController {
 
       console.log('\nCourse successfully created!');
       console.log(response);
+      return response;
     } catch (error: any) {
       console.log('Error when registering a new course: ', error.message);
+      return error.message;
     }
   }
 
